@@ -1,40 +1,35 @@
-<![CDATA[# KRMU – Smart College Event & Attendance Management System
+# KRMU – Smart College Event & Attendance Management System
 
-<p align="center">
-  <img src="/krmu.webp" alt="KRMU Logo" width="120" />
-</p>
+![KRMU](/krmu.webp)
 
-<p align="center">
-  <strong>A full-stack web application for digitizing college event management and attendance tracking at K.R. Mangalam University.</strong>
-</p>
+**A full-stack web application for digitizing college event management and attendance tracking at K.R. Mangalam University.**
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Node.js-Express%205-339933?logo=node.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-Educational-8B2332" />
-</p>
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Express%205-339933?logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)
+![License](https://img.shields.io/badge/License-Educational-8B2332)
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Problem Statement](#-problem-statement)
 - [Key Features](#-key-features)
-- [Architecture](#-architecture)
-- [Tech Stack](#-tech-stack)
+- [Architecture](#%EF%B8%8F-architecture)
+- [Tech Stack](#%EF%B8%8F-tech-stack)
 - [Project Structure](#-project-structure)
 - [Getting Started](#-getting-started)
 - [Environment Variables](#-environment-variables)
 - [API Reference](#-api-reference)
-- [Database Schema](#-database-schema)
+- [Database Schema](#%EF%B8%8F-database-schema)
 - [Authentication & Authorization](#-authentication--authorization)
-- [Security](#-security)
 - [Demo Credentials](#-demo-credentials)
 - [Available Scripts](#-available-scripts)
+- [Design & Theme](#-design--theme)
+- [Testing](#-testing-the-application)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -65,7 +60,7 @@ Traditional college event management suffers from:
 
 ## ✨ Key Features
 
-### 👨‍🎓 For Students
+### For Students
 
 | Feature | Description |
 |---------|-------------|
@@ -75,7 +70,7 @@ Traditional college event management suffers from:
 | **My Registrations** | Track all registrations and view attendance status |
 | **Attendance History** | View past attendance records across all events |
 
-### 👨‍🏫 For Faculty
+### For Faculty
 
 | Feature | Description |
 |---------|-------------|
@@ -87,7 +82,7 @@ Traditional college event management suffers from:
 | **Email Reports** | Automated CSV attendance reports sent via email (Gmail SMTP) |
 | **Faculty Dashboard** | Stats overview — total events, registrations, attendance marked |
 
-### 🛡️ General
+### General
 
 - **Role-Based Access Control** — Separate dashboards and permissions for students and faculty
 - **JWT Authentication** — Secure, stateless token-based authentication with 1-day expiry
@@ -109,7 +104,7 @@ The system uses a **3-tier client-server architecture** with clear separation of
 │              (Client-Side SPA — Port 5173)                      │
 │                                                                 │
 │   Landing Page → Auth Pages → Role-Based Dashboards             │
-│   AuthContext (State) │ ProtectedRoutes │ Layout Components      │
+│   AuthContext (State) | ProtectedRoutes | Layout Components     │
 └──────────────────────────┬──────────────────────────────────────┘
                            │  HTTP REST API (JSON)
                            │  Authorization: Bearer <JWT>
@@ -119,7 +114,7 @@ The system uses a **3-tier client-server architecture** with clear separation of
 │              Node.js + Express 5 (Port 3000)                    │
 │                                                                 │
 │   CORS → JSON Parser → JWT Auth Middleware → Route Handlers     │
-│   /api/auth  │  /api/events  │  /api/registrations  │  /api/attendance │
+│   /api/auth | /api/events | /api/registrations | /api/attendance│
 │                                                                 │
 │   Utility Layer: Nodemailer (Email Reports)                     │
 └──────────────────────────┬──────────────────────────────────────┘
@@ -129,11 +124,11 @@ The system uses a **3-tier client-server architecture** with clear separation of
 │                      DATA LAYER                                 │
 │              MongoDB Atlas (Cloud-Hosted)                       │
 │                                                                 │
-│   Users │ Events │ Registrations │ Attendance                   │
+│   Users | Events | Registrations | Attendance                   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-> For the complete, in-depth architecture documentation, see [`KRMU_System_Architecture.md`](./KRMU_System_Architecture.md).
+> For the complete, in-depth architecture documentation, see [KRMU_System_Architecture.md](./KRMU_System_Architecture.md).
 
 ---
 
@@ -290,7 +285,7 @@ cd backend
 npm run dev
 ```
 
-The Express server will start on **http://localhost:3000**.
+The Express server will start on `http://localhost:3000`.
 
 **Terminal 2 — Frontend (Dev Server)**
 
@@ -299,7 +294,7 @@ cd frontend
 npm run dev
 ```
 
-The Vite dev server will start on **http://localhost:5173**.
+The Vite dev server will start on `http://localhost:5173`.
 
 **4. Open your browser and navigate to:**
 
@@ -335,7 +330,7 @@ EMAIL_PASS=your-gmail-app-password
 | `EMAIL_USER` | Gmail address for sending attendance email reports |
 | `EMAIL_PASS` | Gmail [App Password](https://support.google.com/accounts/answer/185833) (not your regular password) |
 
-> ⚠️ **Important:** Never commit the `.env` file to version control. It is already listed in `.gitignore`.
+> **Warning:** Never commit the `.env` file to version control. It is already listed in `.gitignore`.
 
 ---
 
@@ -344,6 +339,7 @@ EMAIL_PASS=your-gmail-app-password
 **Base URL:** `http://localhost:3000/api`
 
 All authenticated endpoints require the header:
+
 ```
 Authorization: Bearer <JWT_TOKEN>
 ```
@@ -352,52 +348,52 @@ Authorization: Bearer <JWT_TOKEN>
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
-| `POST` | `/auth/register` | ❌ | Register a new user |
-| `POST` | `/auth/login` | ❌ | Login and receive JWT token |
-| `GET` | `/auth/me` | ✅ | Get current authenticated user |
+| POST | `/auth/register` | No | Register a new user |
+| POST | `/auth/login` | No | Login and receive JWT token |
+| GET | `/auth/me` | Yes | Get current authenticated user |
 
 ### Events — `/api/events`
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
-| `GET` | `/events` | ✅ Any | List all events (newest first) |
-| `GET` | `/events/:id` | ✅ Any | Get single event by ID |
-| `POST` | `/events` | ✅ Faculty | Create a new event |
-| `PATCH` | `/events/:id` | ✅ Faculty (Owner) | Update event fields |
-| `DELETE` | `/events/:id` | ✅ Faculty (Owner) | Delete event + cascading cleanup |
-| `GET` | `/events/:id/registrations` | ✅ Any | Get all registrations for an event |
+| GET | `/events` | Yes (Any) | List all events (newest first) |
+| GET | `/events/:id` | Yes (Any) | Get single event by ID |
+| POST | `/events` | Yes (Faculty) | Create a new event |
+| PATCH | `/events/:id` | Yes (Faculty, Owner) | Update event fields |
+| DELETE | `/events/:id` | Yes (Faculty, Owner) | Delete event + cascading cleanup |
+| GET | `/events/:id/registrations` | Yes (Any) | Get all registrations for an event |
 
 ### Registrations — `/api/registrations`
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
-| `POST` | `/registrations` | ✅ Student | Register for an event |
-| `GET` | `/registrations/my` | ✅ Student | Get my registrations |
-| `DELETE` | `/registrations/:eventId` | ✅ Student | Cancel a registration |
+| POST | `/registrations` | Yes (Student) | Register for an event |
+| GET | `/registrations/my` | Yes (Student) | Get my registrations |
+| DELETE | `/registrations/:eventId` | Yes (Student) | Cancel a registration |
 
 ### Attendance — `/api/attendance`
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
-| `POST` | `/attendance/bulk` | ✅ Faculty | Bulk save/update attendance |
-| `POST` | `/attendance/:eventId` | ✅ Faculty | Mark attendance for single event |
-| `POST` | `/attendance/:eventId/email` | ✅ Faculty | Email attendance report to creator |
-| `GET` | `/attendance/:eventId` | ✅ Any | Get attendance for an event |
-| `GET` | `/attendance/my/records` | ✅ Student | Get my attendance records |
+| POST | `/attendance/bulk` | Yes (Faculty) | Bulk save/update attendance |
+| POST | `/attendance/:eventId` | Yes (Faculty) | Mark attendance for single event |
+| POST | `/attendance/:eventId/email` | Yes (Faculty) | Email attendance report to creator |
+| GET | `/attendance/:eventId` | Yes (Any) | Get attendance for an event |
+| GET | `/attendance/my/records` | Yes (Student) | Get my attendance records |
 
 ### Response Format
 
 All endpoints return a consistent JSON structure:
 
 ```json
-// ✅ Success
 {
   "success": true,
   "message": "Operation completed",
-  "data": { ... }
+  "data": {}
 }
+```
 
-// ❌ Error
+```json
 {
   "success": false,
   "message": "Error description"
@@ -434,29 +430,29 @@ The application uses **4 MongoDB collections** with Mongoose ODM:
 | `capacity` | Number | Optional (null = unlimited) |
 | `department` | String | Default: `"General"` |
 | `isAttendanceLocked` | Boolean | Default: `false` |
-| `createdBy` | ObjectId | Ref → Users (faculty) |
+| `createdBy` | ObjectId | Ref to Users (faculty) |
 
 ### Registrations
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `eventId` | ObjectId | Required, Ref → Events |
-| `studentId` | ObjectId | Required, Ref → Users |
+| `eventId` | ObjectId | Required, Ref to Events |
+| `studentId` | ObjectId | Required, Ref to Users |
 
 ### Attendance
 
 | Field | Type | Constraints |
 |-------|------|-------------|
-| `eventId` | ObjectId | Ref → Events |
-| `studentId` | ObjectId | Ref → Users |
+| `eventId` | ObjectId | Ref to Events |
+| `studentId` | ObjectId | Ref to Users |
 | `status` | String | `Present` or `Absent` (Default: `Absent`) |
 
 ### Entity Relationships
 
 ```
-Users (1) ──── creates ────► Events (Many)
-Users (1) ──── registers ──► Registrations (Many) ◄── belongs to ── Events (1)
-Users (1) ──── has ────────► Attendance (Many)    ◄── belongs to ── Events (1)
+Users (1) ---- creates ----> Events (Many)
+Users (1) ---- registers --> Registrations (Many) <-- belongs to -- Events (1)
+Users (1) ---- has --------> Attendance (Many)    <-- belongs to -- Events (1)
 ```
 
 ---
@@ -475,15 +471,15 @@ Users (1) ──── has ────────► Attendance (Many)    ◄�
 
 | Action | Student | Faculty | Owner Only |
 |--------|:-------:|:-------:|:----------:|
-| Register / Login | ✅ | ✅ | – |
-| View Events | ✅ | ✅ | – |
-| Create Event | ❌ | ✅ | – |
-| Update / Delete Event | ❌ | ✅ | ✅ |
-| Register for Event | ✅ | ❌ | – |
-| Cancel Registration | ✅ | ❌ | – |
-| Mark Attendance | ❌ | ✅ | – |
-| Send Email Report | ❌ | ✅ | – |
-| View Attendance | ✅ | ✅ | – |
+| Register / Login | Yes | Yes | – |
+| View Events | Yes | Yes | – |
+| Create Event | No | Yes | – |
+| Update / Delete Event | No | Yes | Yes |
+| Register for Event | Yes | No | – |
+| Cancel Registration | Yes | No | – |
+| Mark Attendance | No | Yes | – |
+| Send Email Report | No | Yes | – |
+| View Attendance | Yes | Yes | – |
 
 ### Security Layers
 
@@ -513,17 +509,17 @@ The application comes with pre-configured demo accounts (if seeded):
 
 **As Faculty:**
 1. Login with faculty credentials
-2. Navigate to **Events** → Click **Create Event**
+2. Navigate to **Events** and click **Create Event**
 3. Fill in event details and submit
-4. View your event → Switch to **Mark Attendance** tab
-5. Toggle Present/Absent for each student → **Save Attendance**
+4. View your event and switch to **Mark Attendance** tab
+5. Toggle Present/Absent for each student and click **Save Attendance**
 6. Click **Lock Attendance** when finalized
 7. Click **Send Email Report** to receive CSV via email
 
 **As Student:**
 1. Login with student credentials (or register a new account)
 2. Browse **Events** to see all available events
-3. Click on any event → Click **Register Now**
+3. Click on any event and click **Register Now**
 4. View your registrations in **My Registrations**
 5. Check attendance status after the event concludes
 
@@ -571,8 +567,8 @@ The UI is fully responsive across:
 
 ## 🧪 Testing the Application
 
-1. **Faculty Flow** — Register/login as faculty → Create an event → View registrations → Mark attendance → Lock → Email report
-2. **Student Flow** — Register/login as student → Browse events → Register for an event → View in My Registrations → Check attendance
+1. **Faculty Flow** — Register/login as faculty, create an event, view registrations, mark attendance, lock, and email report
+2. **Student Flow** — Register/login as student, browse events, register for an event, view in My Registrations, check attendance
 3. **Edge Cases** — Duplicate registration prevention, capacity limits, locked attendance cancellation block, owner-only edit/delete
 
 ---
@@ -604,13 +600,10 @@ This project is developed for **educational purposes** as part of the Minor Proj
 
 ## 📚 Additional Documentation
 
-- **[System Architecture Document](./KRMU_System_Architecture.md)** — In-depth 900+ line architectural reference covering frontend/backend architecture, data flow diagrams, security analysis, deployment setup, and complete API specifications.
+- [System Architecture Document](./KRMU_System_Architecture.md) — In-depth 900+ line architectural reference covering frontend/backend architecture, data flow diagrams, security analysis, deployment setup, and complete API specifications.
 
 ---
 
-<p align="center">
-  <strong>Built with ❤️ for K.R. Mangalam University</strong>
-  <br />
-  <em>KRMU – Smart College Event & Attendance Management System</em>
-</p>
-]]>
+**Built with love for K.R. Mangalam University**
+
+*KRMU – Smart College Event & Attendance Management System*
