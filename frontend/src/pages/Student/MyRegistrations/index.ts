@@ -1,0 +1,1 @@
+export { MyRegistrations } from './MyRegistrations';

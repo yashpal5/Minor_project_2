@@ -1,0 +1,229 @@
+.registrations-header {
+  margin-bottom: 2rem;
+}
+
+.registrations-header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.registrations-section {
+  margin-bottom: 3rem;
+}
+
+.registrations-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.registrations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.registration-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition-fast);
+}
+
+.registration-card:hover {
+  transform: translateX(4px);
+}
+
+.reg-date-badge {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.reg-date-badge .date-day {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.reg-date-badge .date-month {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.reg-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.reg-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.reg-header h3 {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.reg-details {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.reg-details span {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.reg-details svg {
+  color: var(--color-primary);
+}
+
+.reg-meta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.event-link {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
+
+.attendance-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-icon.present {
+  color: var(--color-success);
+}
+
+.status-icon.absent {
+  color: var(--color-error);
+}
+
+.status-icon.pending {
+  color: var(--color-warning);
+}
+
+.attendance-label {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.attendance-label.present {
+  color: var(--color-success);
+}
+
+.attendance-label.absent {
+  color: var(--color-error);
+}
+
+.attendance-label.not_marked {
+  color: var(--color-warning);
+}
+
+@media (max-width: 768px) {
+  .registration-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .reg-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .reg-date-badge {
+    width: 56px;
+    height: 56px;
+  }
+
+  .reg-date-badge .date-day {
+    font-size: 1.25rem;
+  }
+
+  .table {
+    font-size: 0.875rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .registrations-section h2 {
+    font-size: 1.125rem;
+  }
+
+  .reg-header h3 {
+    font-size: 1rem;
+  }
+
+  .reg-date-badge {
+    width: 48px;
+    height: 48px;
+  }
+
+  .reg-date-badge .date-day {
+    font-size: 1.125rem;
+  }
+
+  .reg-date-badge .date-month {
+    font-size: 0.625rem;
+  }
+
+  .reg-details span {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-card {
+    padding: 0.875rem;
+  }
+
+  .registrations-header h1 {
+    font-size: 1.375rem;
+  }
+
+  .reg-header {
+    gap: 0.5rem;
+  }
+
+  .reg-header h3 {
+    font-size: 0.9375rem;
+  }
+}
