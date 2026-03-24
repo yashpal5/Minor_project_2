@@ -16,7 +16,7 @@ const formatEvent = (event) => {
   return obj;
 };
 
-/* GET ALL EVENTS */
+/* ===================== GET ALL EVENTS ===================== */
 router.get("/", auth, async (req, res) => {
   try {
     const events = await Event.find()
@@ -30,7 +30,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-/* GET SINGLE EVENT */
+/* ===================== GET SINGLE EVENT ===================== */
 router.get("/:id", auth, async (req, res) => {
   try {
     const event = await Event.findById(req.params.id).populate(
@@ -48,7 +48,7 @@ router.get("/:id", auth, async (req, res) => {
   }
 });
 
-/* FACULTY: CREATE EVENT */
+/* ===================== CREATE EVENT (FACULTY ONLY) ===================== */
 router.post("/", auth, async (req, res) => {
   try {
     if (req.user.role !== "faculty") {
@@ -86,7 +86,7 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-/* FACULTY: UPDATE EVENT (PATCH) — used for locking attendance etc. */
+/* ===================== UPDATE EVENT ===================== */
 router.patch("/:id", auth, async (req, res) => {
   try {
     if (req.user.role !== "faculty") {
@@ -117,7 +117,7 @@ router.patch("/:id", auth, async (req, res) => {
   }
 });
 
-/* FACULTY: DELETE EVENT */
+/* ===================== DELETE EVENT ===================== */
 router.delete("/:id", auth, async (req, res) => {
   try {
     if (req.user.role !== "faculty") {
@@ -144,7 +144,7 @@ router.delete("/:id", auth, async (req, res) => {
   }
 });
 
-/* GET REGISTRATIONS FOR AN EVENT */
+/* ===================== GET EVENT REGISTRATIONS ===================== */
 router.get("/:id/registrations", auth, async (req, res) => {
   try {
     const registrations = await Registration.find({ eventId: req.params.id })

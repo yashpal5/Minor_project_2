@@ -5,7 +5,7 @@ const auth = require("../middleware/auth");
 
 const router = express.Router();
 
-/* STUDENT: REGISTER FOR EVENT */
+/* ===================== STUDENT: REGISTER FOR EVENT ===================== */
 router.post("/", auth, async (req, res) => {
   try {
     if (req.user.role !== "student") {
@@ -53,7 +53,7 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-/* STUDENT: GET MY REGISTRATIONS */
+/* ===================== STUDENT: REGISTER FOR EVENT ===================== */
 router.get("/my", auth, async (req, res) => {
   try {
     const registrations = await Registration.find({ studentId: req.user.id });
@@ -75,7 +75,7 @@ router.get("/my", auth, async (req, res) => {
   }
 });
 
-/* STUDENT: CANCEL REGISTRATION */
+/* ===================== STUDENT: GET MY REGISTRATIONS ===================== */
 router.delete("/:eventId", auth, async (req, res) => {
   try {
     const { eventId } = req.params;
