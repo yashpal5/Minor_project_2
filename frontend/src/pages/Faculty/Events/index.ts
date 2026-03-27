@@ -1,0 +1,1 @@
+export { FacultyEvents } from './FacultyEvents';
